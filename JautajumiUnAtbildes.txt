@@ -1,0 +1,60 @@
+Kāda klase tiek izmantota teksta datņu lasīšanai Java programmēšanas valodā?
+a) for
+b) new File
+c) BufferedReader
+d) int
+c
+Kāda metode tiek izmantota, lai nolasītu vienu rindu no teksta datnes, izmantojot BufferedReader klasi?
+a) close
+b) readLine
+c) write
+d) FileWriter
+b
+Kas ir FileNotFoundException?
+a) Izņēmums, kas tiek izmests, ja failu nevar atrast.
+b) Metode, kas nolasīta visus burtus no faila.
+c) Metode, kas aizver failu.
+d) Klase, kas pārvalda datu plūsmas.
+a
+Kāda metode tiek izmantota, lai rakstītu datus teksta datnē, izmantojot FileWriter klasi?
+a) delete
+b) append
+c) String
+d) write
+d
+Kāda metode tiek izmantota, lai pārbaudītu, vai datne eksistē Java programmēšanas valodā?
+a) InputStream
+b) exists
+c) readLine
+d) close
+b
+Kas ir IOException?
+a) Izņēmums, kas tiek izmests, ja rodas ievades/izvades kļūda.
+b) Metode, kas nolasīta visus burtus no faila.
+c) Metode, kas aizver failu.
+d) Klase, kas pārvalda datu plūsmas.
+a
+Kāda metode tiek izmantota, lai nolasītu datus no teksta datnes, izmantojot FileReader klasi?
+a) append
+b) read
+c) exists
+d) delete
+b
+Kas ir PrintWriter klase?
+a) Klase, kas nodrošina iespējas rakstīt formatētus datus failā.
+b) Metode, kas nolasīta vienu rindu no faila.
+c) Metode, kas aizver failu.
+d) Metode, kas raksta datus failā.
+a
+Kāda metode tiek izmantota, lai izdzēstu datni Java programmēšanas valodā?
+a) close
+b) append
+c) readLine
+d) delete
+d
+Kāda metode tiek izmantota, lai pievienotu datus teksta datnei, izmantojot FileWriter klasi?
+a) read
+b) append
+c) close
+d) delete
+b

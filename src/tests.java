@@ -3,18 +3,23 @@ import java.util.*;
 class Jautajumi{
 	String jautajumi;
 	List<String> atbildes;
-	char pareizatb;
+	char pareizAtb;
 	
-	public Jautajumi(String jautajumi, List<String> atbildes, char pareizatb) {
+	public Jautajumi(String jautajumi, List<String> atbildes, char pareizAtb) {
 		this.jautajumi = jautajumi;
 		this.atbildes = atbildes;
-		this.pareizatb = pareizatb;
+		this.pareizAtb = pareizAtb;
 	}
 	public boolean AtbilParbaude(char atbilde) {
-		return atbilde == pareizatb;
+		return atbilde == pareizAtb;
 	}
 }
-
+class Test{
+	List<Jautajumi> jautajumi = new ArrayList<>();
+	int punkti =0;
+	int parezasatb = 0;
+	int nepareizasAtb = 0;
+}
 
 
 public class tests {
