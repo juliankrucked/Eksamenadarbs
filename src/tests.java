@@ -19,7 +19,7 @@ class Jautajumi{
 class Test{
 	List<Jautajumi> jaut = new ArrayList<>();
 	int punkti =0;
-	int parezasatb = 0;
+	int pareizasatb = 0;
 	int nepareizasAtb = 0;
 	
 	public void JautajumuIelade(String failanosaukums)throws IOException{
@@ -35,7 +35,7 @@ class Test{
             			throw new IOException("nepabeigts jautajums  failā");
             		}
             		atbildes.add(line);
-            	}
+            		}
             	}
             }
 		}
@@ -56,7 +56,7 @@ class Test{
             if (q.AtbilParbaude(atbilde)) {
                 JOptionPane.showMessageDialog(null, "pareizi! \n+2 punkti");
                 punkti += 2;
-                parezasatb++;
+                pareizasatb++;
             } else {
                 JOptionPane.showMessageDialog(null, "nepareizi.\n -1 punkts");
                 punkti--;
@@ -64,6 +64,15 @@ class Test{
                 }
             }
 		}
+	public void SaglabātRezultātu(String failanosaukums) throws IOException{
+		try(BufferedWriter raksta = new BufferedWriter(new FileWriter(failanosaukums))){
+			raksta.write("punktu skaits: "+punkti+"\n");
+			raksta.write("pareizi atbildēti jautājumi: "+pareizasatb+"\n");
+			raksta.write(""+nepareizasAtb+"\n");
+		}
+		
+		
+	}
 	
 	}
 
