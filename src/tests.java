@@ -1,41 +1,24 @@
-import java.awt.EventQueue;
+import java.io.*;
+import java.util.*;
+class Jautajumi{
+	String jautajumi;
+	List<String> atbildes;
+	char pareizatb;
+	
+	public Jautajumi(String jautajumi, List<String> atbildes, char pareizatb) {
+		this.jautajumi = jautajumi;
+		this.atbildes = atbildes;
+		this.pareizatb = pareizatb;
+	}
+	public boolean AtbilParbaude(char atbilde) {
+		return atbilde == pareizatb;
+	}
+}
 
-import javax.swing.JFrame;
+
 
 public class tests {
-
-	private JFrame frame;
-
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					tests window = new tests();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
-	/**
-	 * Create the application.
-	 */
-	public tests() {
-		initialize();
 	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
-
 }
