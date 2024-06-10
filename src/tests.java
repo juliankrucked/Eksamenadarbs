@@ -2,54 +2,77 @@ import java.io.*;
 import javax.swing.*;
 import java.util.*;
 
-
 class Jautajumi{
-	String jautajums;
+	String jaut;
 	List<String> atbildes;
 	char pareizAtb;
 	
 	public Jautajumi(String jautajums, List<String> atbildes, char pareizAtb) {
-		this.jautajums = jautajums;
+		this.jaut = jautajums;
 		this.atbildes = atbildes;
 		this.pareizAtb = pareizAtb;
 	}
 	public boolean AtbilParbaude(char atbilde) {
 		return atbilde == pareizAtb;
+		}
 	}
-}
 class Test{
-	List<Jautajumi> jautajumi = new ArrayList<>();
+	List<Jautajumi> jaut = new ArrayList<>();
 	int punkti =0;
 	int parezasatb = 0;
 	int nepareizasAtb = 0;
+	
 	public void JautajumuIelade(String failanosaukums)throws IOException{
 		try(BufferedReader lasit = new BufferedReader(new FileReader(failanosaukums))){
-			String rinda;
-            while ((rinda = lasit.readLine()) != null) 
-			if(rinda.trim().isEmpty()) continue;
-			String jautajumi = rinda;
-			List<String> atbildes = new ArrayList<>();
-			for(int i = 0;1<4;i++) {
-				rinda = lasit.readLine();
-				if(rinda == null) {
-					throw new IOException("nepabeigts jautajums  failā");
-				}
-				atbildes.add(rinda);
-			}
-			rinda = lasit.readLine();
-			if(rinda == null) {
-				throw new IOException("zudusi jautajuma pareizā atbilde: "+ jautajumi);
-			}
-			char parezasatb = rinda.charAt(0);
-			jautajumi.add(new Jautajumi(jautajumi, atbildes, parezasatb));
-		
+			String line;
+            while ((line = lasit.readLine()) != null) {
+            	if(line.trim().isEmpty()) continue;
+            	String jautajums = line;
+            	List<String> atbildes = new ArrayList<>();
+            	for(int i = 0;1<4;i++) {
+            		line = lasit.readLine();
+            		if(line == null) {
+            			throw new IOException("nepabeigts jautajums  failā");
+            		}
+            		atbildes.add(line);
+            	}
+            	}
+            }
 		}
+	
+
+	public void TestaSakums() {
+		for(Jautajumi q : jaut) {
+			StringBuilder message = new StringBuilder(q.jaut + "\n");
+			for(String atbilde : q.atbildes) {
+				message.append(atbilde).append("\n");
+			}
+			String SpelAtb = JOptionPane.showInputDialog(null, message.toString(),"tests",JOptionPane.QUESTION_MESSAGE);
+			if (SpelAtb == null || SpelAtb.isEmpty()) {
+				JOptionPane.showMessageDialog(null, "nav dota atbilde dodamies uznākamo jautājumu");
+				continue;
+				}
+			char atbilde = SpelAtb.charAt(0);
+            if (q.AtbilParbaude(atbilde)) {
+                JOptionPane.showMessageDialog(null, "pareizi! \n+2 punkti");
+                punkti += 2;
+                parezasatb++;
+            } else {
+                JOptionPane.showMessageDialog(null, "nepareizi.\n -1 punkts");
+                punkti--;
+                nepareizasAtb++;
+                }
+            }
+		}
+	
 	}
-}
+
+
 
 
 public class tests {
 	public static void main(String[] args) {
-
+		
 	}
 }
+
