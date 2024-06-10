@@ -7,8 +7,8 @@ class Jautajumi{
 	List<String> atbildes;
 	char pareizAtb;
 	
-	public Jautajumi(String jautajums, List<String> atbildes, char pareizAtb) {
-		this.jaut = jautajums;
+	public Jautajumi(String jautajumi, List<String> atbildes, char pareizAtb) {
+		this.jaut = jautajumi;
 		this.atbildes = atbildes;
 		this.pareizAtb = pareizAtb;
 	}
@@ -29,13 +29,19 @@ class Test{
             	if(line.trim().isEmpty()) continue;
             	String jautajums = line;
             	List<String> atbildes = new ArrayList<>();
-            	for(int i = 0;1<4;i++) {
+            	for(int i = 0;i<4;i++) {
             		line = lasit.readLine();
             		if(line == null) {
             			throw new IOException("nepabeigts jautajums  failā");
             		}
             		atbildes.add(line);
             		}
+            	line = lasit.readLine();
+            	if (line == null) {
+                    throw new IOException("Missing correct answer for question: " + jaut);
+                }
+            	char parezasatb = line.charAt(0);
+            	jaut.add(new Jautajumi(jautajums, atbildes, parezasatb));
             	}
             }
 		}
@@ -66,22 +72,24 @@ class Test{
 		}
 	public void SaglabātRezultātu(String failanosaukums) throws IOException{
 		try(BufferedWriter raksta = new BufferedWriter(new FileWriter(failanosaukums))){
-			raksta.write("punktu skaits: "+punkti+"\n");
-			raksta.write("pareizi atbildēti jautājumi: "+pareizasatb+"\n");
-			raksta.write(""+nepareizasAtb+"\n");
+			raksta.write("Punktu skaits: "+punkti+"\n");
+			raksta.write("Pareizi atbildēti jautājumi: "+pareizasatb+"\n");
+			raksta.write("Nepareizi atbildēti jautājumi: "+nepareizasAtb+"\n");
+			}
 		}
-		
-		
 	}
-	
-	}
-
-
-
 
 public class tests {
 	public static void main(String[] args) {
-		
+		Test test = new Test();
+		try {
+			test.JautajumuIelade("JautajumiUnAtbildes.txt");
+			test.TestaSakums();
+			test.SaglabātRezultātu("rezultats.txt");
+		}catch(IOException e) {
+			JOptionPane.showMessageDialog(null,"An error occurred: " +e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE );
+			}
+		}
 	}
-}
+
 
