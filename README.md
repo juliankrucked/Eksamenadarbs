@@ -17,8 +17,9 @@ Programma sastāv no šādām galvenajām daļām:
 2. Programma parāda jautājumus lietotājam, izmantojot `JOptionPane`.
 3. Lietotājs ievada savas atbildes.
 4. Programma pārbauda atbildes un skaita pareizās un nepareizās atbildessniedzot atiecīgos punktus procesā.
-5. 
-6. Programma saglabā rezultātus failā `rezultats.txt`.
+   ![image](https://github.com/juliankrucked/Eksamenadarbs/assets/153814717/3545b89c-65ab-4eb0-abef-7a6589ad6351)
+
+5. Programma saglabā rezultātus failā `rezultats.txt`.
 
 ## Jautājumu faila formāts
 
