@@ -70,14 +70,19 @@ class Test{
                 }
             }
 		}
-	public void SaglabatRezultatu(String failanosaukums) throws IOException{
-		try(BufferedWriter raksta = new BufferedWriter(new FileWriter(failanosaukums))){
-			raksta.write("Punktu skaits: "+punkti+"\n");
-			raksta.write("Pareizi atbildēti jautājumi: "+pareizasatb+"\n");
-			raksta.write("Nepareizi atbildēti jautājumi: "+nepareizasAtb+"\n");
-			}
-		}
-	}
+	public void SaglabatRezultatu(String failanosaukums) throws IOException {
+        StringBuilder rezultati = new StringBuilder();
+        rezultati.append("Punktu skaits: ").append(punkti).append("\n");
+        rezultati.append("Pareizi atbildēti jautājumi: ").append(pareizasatb).append("\n");
+        rezultati.append("Nepareizi atbildēti jautājumi: ").append(nepareizasAtb).append("\n");
+        
+        try (BufferedWriter raksta = new BufferedWriter(new FileWriter(failanosaukums))) {
+            raksta.write(rezultati.toString());
+        }
+        
+        JOptionPane.showMessageDialog(null, rezultati.toString(), "Rezultāti", JOptionPane.INFORMATION_MESSAGE);
+    }
+}
 
 public class tests {
 	public static void main(String[] args) {
