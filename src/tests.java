@@ -70,7 +70,7 @@ class Test{
                 }
             }
 		}
-	public void SaglabātRezultātu(String failanosaukums) throws IOException{
+	public void SaglabatRezultatu(String failanosaukums) throws IOException{
 		try(BufferedWriter raksta = new BufferedWriter(new FileWriter(failanosaukums))){
 			raksta.write("Punktu skaits: "+punkti+"\n");
 			raksta.write("Pareizi atbildēti jautājumi: "+pareizasatb+"\n");
@@ -85,7 +85,7 @@ public class tests {
 		try {
 			test.JautajumuIelade("JautajumiUnAtbildes.txt");
 			test.TestaSakums();
-			test.SaglabātRezultātu("rezultats.txt");
+			test.SaglabatRezultatu("rezultats.txt");
 		}catch(IOException e) {
 			JOptionPane.showMessageDialog(null,"An error occurred: " +e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE );
 			}
